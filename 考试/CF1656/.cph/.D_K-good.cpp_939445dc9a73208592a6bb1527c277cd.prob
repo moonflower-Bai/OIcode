@@ -1,1 +1,0 @@
-{"name":"D. K-good","group":"CodeTON Round 1 (Div. 1 + Div. 2, Rated, Prizes!)","url":"https://codeforces.com/contest/1656/problem/D","interactive":false,"memoryLimit":256,"timeLimit":3000,"tests":[{"id":1648132793794,"input":"5\n2\n4\n6\n15\n20","output":"-1\n-1\n3\n3\n5"}],"input":{"type":"stdin"},"output":{"type":"stdout"},"srcPath":"/home/bai/code/考试/CF1656/D_K-good.cpp"}

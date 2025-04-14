@@ -1,1 +1,0 @@
-{"name":"Local: A","url":"/home/bai/code/考试/sdfzc50/A.cpp","tests":[{"id":1644364951534,"input":"6 6   \n1 3 5 7 9 8   \n3 4 5 6 7 8","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/bai/code/考试/sdfzc50/A.cpp","group":"local","local":true}

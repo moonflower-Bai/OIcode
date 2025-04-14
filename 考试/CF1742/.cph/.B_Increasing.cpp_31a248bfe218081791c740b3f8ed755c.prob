@@ -1,1 +1,0 @@
-{"name":"B. Increasing","group":"Codeforces Round #827 (Div. 4)","url":"https://codeforces.com/contest/1742/problem/B","interactive":false,"memoryLimit":256,"timeLimit":1000,"tests":[{"id":1666447839967,"input":"3\n4\n1 1 1 1\n5\n8 7 1 3 4\n1\n5\n","output":"NO\nYES\nYES"}],"input":{"type":"stdin"},"output":{"type":"stdout"},"srcPath":"/home/bai/code/考试/CF1742/B_Increasing.cpp"}

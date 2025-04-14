@@ -1,44 +1,41 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
+const int qwe = 1e6+5;
+int T;
+int n, m, cnt;
 
-const int qwe = 1e6 + 5;
-int T, x, y, n, m;
 int fa[qwe];
-
-void init()
-{
-    for (int i = 1; i <= n; i++)
-    {  
-        fa[i] = i;
-    }
-}
 int fnd(int x){
     if(fa[x] == x){
         return x;
     }
-    else{
-        return fnd(fa[x]);
+    return fa[x] = fnd(fa[x]);
+}
+void add(int u, int v){
+    int x = fnd(fa[u]), y = fnd(fa[v]);
+    if(x == y){
+        return;
+    }
+    fa[x] = fnd(fa[y]);
+    cnt--;
+}
+void init(){
+    cnt = n;
+    for(int i = 1; i <= n; i++){
+        fa[i] = i;
     }
 }
-
-int main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-
+int main(){
     cin >> T;
-    while (T--)
-    {
-        init();
+    while(T--){
         cin >> n >> m;
-        for (int i = 1; i <= m; i++)
-        {
-            cin >> x >> y;
-            fa[x] = fnd(y);
+        init();
+        for(int i = 1; i <= m; i++){
+            int u, v;
+            cin >> u >> v;
+            add(u, v);
         }
-        for(int i=1;i<=n;i++){
-            int tmp = fnd(i);
-        }
+        cout << cnt << endl;
     }
+    return 0;
 }

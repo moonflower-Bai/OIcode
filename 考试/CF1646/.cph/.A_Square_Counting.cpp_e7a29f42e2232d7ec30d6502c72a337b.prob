@@ -1,1 +1,0 @@
-{"name":"A. Square Counting","group":"Codeforces Round #774 (Div. 2)","url":"https://codeforces.com/contest/1646/problem/A","interactive":false,"memoryLimit":256,"timeLimit":1000,"tests":[{"id":1646408113949,"input":"4\n7 0\n1 1\n2 12\n3 12","output":"0\n1\n3\n1"}],"input":{"type":"stdin"},"output":{"type":"stdout"},"srcPath":"/home/bai/code/考试/CF1646/A_Square_Counting.cpp"}

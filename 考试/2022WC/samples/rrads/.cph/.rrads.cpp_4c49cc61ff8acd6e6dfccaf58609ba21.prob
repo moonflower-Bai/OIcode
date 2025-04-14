@@ -1,1 +1,0 @@
-{"name":"Local: rrads","url":"/home/bai/code/2022WC/samples/rrads/rrads.cpp","tests":[{"id":1643253823602,"input":"5 2\n5 4 3 2 1 \n3 4 \n2 5","output":"1\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/bai/code/2022WC/samples/rrads/rrads.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: A","url":"/home/bai/code/考试/arc135/A.cpp","tests":[{"id":1644758646128,"input":"15","output":"192"},{"id":1644758653866,"input":"3","output":"3"},{"id":1644758657753,"input":"100","output":"824552442"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/bai/code/考试/arc135/A.cpp","group":"local","local":true}
