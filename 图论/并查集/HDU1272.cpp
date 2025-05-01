@@ -1,7 +1,8 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 const int qwe = 1e6+5;
-int n, m;
+int n, m, cnt, mx;
 int fa[qwe], size[qwe];
 int fnd(int x){
     if(fa[x] == x){
@@ -25,11 +26,15 @@ bool add(int u, int v){
     size[x] += size[y];
     return 0;
 }
-bool flag;
+bool flag, vis[qwe];
 void init(){
     flag = 0;
-    for(int i = 1; i <= 1e5; i++){
+    cnt = 0;
+    mx = 0;
+    memset(vis, 0, sizeof(vis));
+    for(int i = 1; i <= int(1e5 + 1); i++){
         fa[i] = i;
+        size[i] = 1;
     }
 }
 int main(){
@@ -39,7 +44,16 @@ int main(){
             cin >> n >> m;
             if(n == 0 && m == 0){
                 if(!flag){
-                    cout << "Yes" << endl;
+                    // cerr <<"mx = " << mx << ", cnt = " << cnt << endl;
+                    if(mx - 1 == cnt){
+                        cout << "Yes" << endl;
+                    }
+                    else if(mx == 0 && cnt == 0){
+                        cout << "Yes" << endl;
+                    }
+                    else{
+                        cout << "No" << endl;
+                    }
                     // cerr << endl;
                 }
                 break;
@@ -47,6 +61,15 @@ int main(){
             if(n == -1 && m == -1){
                 exit(0);
             }
+            if(!vis[n]){
+                vis[n] = 1;
+                mx++;
+            }
+            if(!vis[m]){
+                vis[m] = 1;
+                mx++;
+            }
+            cnt++;
             // cerr << n << ' ' << m << ' ';
             bool res = add(n, m);
             // cerr << (bool)res << ' ' << fa[n] << ' ' << fa[m] << endl;
