@@ -1,0 +1,19 @@
+---
+Checks: >
+    -*,
+    readability-*,
+    performance-*,
+    bugprone-*,
+    modernize-*,
+    -readability-magic-numbers,
+    -readability-function-cognitive-complexity,
+    -modernize-use-trailing-return-type
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+AnalyzeTemporaryDtors: false
+FormatStyle: none
+CheckOptions:
+    - key: readability-identifier-length.MinimumVariableNameLength
+        value: '1'
+    - key: readability-identifier-length.MinimumParameterNameLength
+        value: '1'

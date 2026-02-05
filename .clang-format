@@ -1,0 +1,22 @@
+---
+Language: Cpp
+IndentWidth: 4
+UseTab: ForIndentation
+TabWidth: 4
+BreakBeforeBraces: Linux
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+BraceWrapping:
+  AfterFunction: false
+  AfterControlStatement: Never
+  AfterClass: false
+  AfterStruct: true
+  AfterEnum: true
+  AfterNamespace: true
+  BeforeCatch: true
+  BeforeElse: true
+  AfterExternBlock: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
