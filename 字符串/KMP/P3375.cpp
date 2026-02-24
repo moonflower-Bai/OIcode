@@ -16,6 +16,8 @@ void work(){
         nxt[i]=j;
     }
 }
+// sa: acabcabdabcabc
+// sb: abcabd
 int main(){
     // scanf("%s",sa+1);
     // scanf("%s",sb+1);
@@ -33,6 +35,11 @@ int main(){
     cout<<n<<' '<<m<<endl;
     nxt[1]=0;
     work();
+    cerr << "[debug]";
+    for(int i = 1; i <= m; i++){
+        cerr << nxt[i] << ' ';
+    }
+    cerr << endl;
     int j=0;
     for(int i=1;i<=n;i++){
         while(j>0&&sa[i]!=sb[j+1]){

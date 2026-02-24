@@ -14,6 +14,7 @@
             "-static-libgcc",     
             "-fexec-charset=GBK", 
             "-std=c++14",
+            "-D_Debug",
         ], 
         "type": "process", 
         "group": {
