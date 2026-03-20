@@ -1,13 +1,9 @@
+import random
 
-def pirate(args):
-    print("1")
-    print(args)
-    def plunder(args):
-        return args
-    return plunder
-
-if __name__ == "__main__":
-    result = pirate(pirate(pirate(None)))(5)
-    print(result)
-    result = pirate(pirate(pirate))(7)
-    print(result)
+for i in range(5):
+    a = random.randint(10000000000000000000000, 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
+    b = random.randint(10000000000000000000000, 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
+    print(a)
+    print(b)
+    print(a + b)
+    print(" \n")
