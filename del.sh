@@ -40,7 +40,7 @@ function getdir() {
 
         if [ -d "$dir_or_file" ]; then
             # 忽略当前目录和上级目录
-            if [[ "$element" == "." || "$element" == ".." ]]; then
+            if [[ "$element" == "." || "$element" == ".." || "$element" == ".git" ]]; then
                 debug "Skipping special directory: $dir_or_file"
                 continue
             fi
@@ -63,7 +63,7 @@ function getdir() {
 }
 
 # 主程序入口
-root_dir="/home/bai/code"
+root_dir="/home/moonflowerr/Code"
 
 # 移除已解析的选项，保留剩余参数
 shift $((OPTIND - 1))
