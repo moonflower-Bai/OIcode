@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
-#include <format>
 
-std::string code = "LMQETXYEAGTXCTUIEWNCTXLZEWUAISPZYVAPEWLMGQWYAXFTCJMSQCADAGT"
-                   "XLMDXNXSNPJQSYVAPRIQSMHNOCVAXFV";
+std::string code = "LMQETXYEAGTXCTUIEWNCTXLZEWUAISPZYVAPEWLMGQWYAXFTCJMSQCADAGTXLMDXNXSNPJQSYVAPRIQSMHNOCVAXFV";
 // std::string code = "CIALLO";
 // std::string code = "WOWZJX";
 // [[3, 2], [5, 7]]
@@ -13,10 +11,8 @@ int KeyM[2][2];
 std::vector<std::string> token;
 std::vector<std::string> ans;
 
-std::vector<std::string> ref = {"TH", "HE", "IN", "ER", "AN", "RE", "ED", "ON",
-                                "ES", "ST", "EN", "AT", "TO", "NT", "HA", "ND",
-                                "OU", "EA", "NG", "AS", "OR", "TI", "IS", "ET",
-                                "IT", "AR", "TE", "SE", "HI", "OF", "CI"};
+std::vector<std::string> ref = {"TH", "HE", "IN", "ER", "AN", "RE", "ED", "ON", "ES", "ST", "EN", "AT", "TO", "NT", "HA", "ND",
+                                "OU", "EA", "NG", "AS", "OR", "TI", "IS", "ET", "IT", "AR", "TE", "SE", "HI", "OF", "CI"};
 
 std::map<std::string, int> cnt;
 
@@ -50,8 +46,7 @@ int main()
 	for (const auto &[k, v] : cnt) {
 		freq.push_back({k, v});
 	}
-	std::sort(freq.begin(), freq.end(),
-	          [](const auto &a, const auto &b) { return a.second > b.second; });
+	std::sort(freq.begin(), freq.end(), [](const auto &a, const auto &b) { return a.second > b.second; });
 	auto top2 = std::vector<std::string>{freq[0].first, freq[1].first};
 	for (int i = 0; i < ref.size(); i++) {
 		for (int j = 0; j < ref.size(); j++) {
@@ -72,9 +67,7 @@ int main()
 			inv_plainM[1][0] = 26 - cipherM[1][0];
 			inv_plainM[1][1] = cipherM[1][1];
 
-			int det =
-			    (plainM[0][0] * plainM[1][1] - plainM[0][1] * plainM[1][0]) %
-			    26;
+			int det = (plainM[0][0] * plainM[1][1] - plainM[0][1] * plainM[1][0]) % 26;
 			if (det < 0)
 				det += 26;
 			int det_inv = inv(det, 26);
@@ -86,28 +79,15 @@ int main()
 			inv_plainM[1][0] = det_inv * inv_plainM[1][0] % 26;
 			inv_plainM[1][1] = det_inv * inv_plainM[1][1] % 26;
 
-			KeyM[0][0] = (cipherM[0][0] * inv_plainM[0][0] +
-			              cipherM[0][1] * inv_plainM[1][0]) %
-			             26;
-			KeyM[0][1] = (cipherM[0][0] * inv_plainM[0][1] +
-			              cipherM[0][1] * inv_plainM[1][1]) %
-			             26;
-			KeyM[1][0] = (cipherM[1][0] * inv_plainM[0][0] +
-			              cipherM[1][1] * inv_plainM[1][0]) %
-			             26;
-			KeyM[1][1] = (cipherM[1][0] * inv_plainM[0][1] +
-			              cipherM[1][1] * inv_plainM[1][1]) %
-			             26;
+			KeyM[0][0] = (cipherM[0][0] * inv_plainM[0][0] + cipherM[0][1] * inv_plainM[1][0]) % 26;
+			KeyM[0][1] = (cipherM[0][0] * inv_plainM[0][1] + cipherM[0][1] * inv_plainM[1][1]) % 26;
+			KeyM[1][0] = (cipherM[1][0] * inv_plainM[0][0] + cipherM[1][1] * inv_plainM[1][0]) % 26;
+			KeyM[1][1] = (cipherM[1][0] * inv_plainM[0][1] + cipherM[1][1] * inv_plainM[1][1]) % 26;
 
-			std::cerr << "\033[38:5:33m" << KeyM[0][0] << ' ' << KeyM[0][1]
-			          << '\n'
-			          << KeyM[1][0] << ' ' << KeyM[1][1] << std::endl;
+			std::cerr << "\033[38:5:33m" << KeyM[0][0] << ' ' << KeyM[0][1] << '\n' << KeyM[1][0] << ' ' << KeyM[1][1] << std::endl;
 
 			int inv_KeyM[2][2];
-			int det_KeyM =
-			    ((KeyM[0][0] * KeyM[1][1] - KeyM[0][1] * KeyM[1][0]) % 26 +
-			     26) %
-			    26;
+			int det_KeyM = ((KeyM[0][0] * KeyM[1][1] - KeyM[0][1] * KeyM[1][0]) % 26 + 26) % 26;
 			int det_KeyM_inv = inv(det_KeyM, 26);
 			std::cerr << "\033[32m" << "inv " << det_KeyM_inv << "\033[0m\n";
 			if (det_KeyM_inv == -1)
